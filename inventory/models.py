@@ -39,8 +39,9 @@ class Item(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=128, blank=False)
     description = models.CharField(max_length=256, blank=False, null=False)
-    notes = models.TextField(blank=True, null=True)
+    note = models.TextField(blank=True, null=True)
     stock = models.PositiveIntegerField(default=0, blank=False, null=False)
+    availability = models.BooleanField(default=False, blank=False, null=False)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
     supplier = models.ForeignKey(max_length=128, to='Supplier', on_delete=models.CASCADE)
 
