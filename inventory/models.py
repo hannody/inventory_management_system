@@ -25,6 +25,12 @@ class Supplier(models.Model):
         blank=False, null=False
     )
 
+    class Meta:
+        """
+        Meta attributes for Item Model
+        """
+        verbose_name_plural = 'suppliers'
+
     def __str__(self):
         """
         String representation of the model (to return the name of the supplier)
@@ -43,7 +49,13 @@ class Item(models.Model):
     stock = models.PositiveIntegerField(default=0, blank=False, null=False)
     availability = models.BooleanField(default=False, blank=False, null=False)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
-    supplier = models.ForeignKey(max_length=128, to='Supplier', on_delete=models.CASCADE)
+    supplier = models.ForeignKey(to=Supplier, on_delete=models.CASCADE)
+
+    class Meta:
+        """
+        Meta attributes for Item Model
+        """
+        verbose_name_plural = 'items'
 
     def __str__(self):
         """
