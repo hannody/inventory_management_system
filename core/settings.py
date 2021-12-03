@@ -41,6 +41,7 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'django_filters',
 ]
 
 LOCAL_APPS = [
@@ -123,6 +124,7 @@ USE_TZ = True
 # DRF Configs
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'],
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
 
 # Static files (CSS, JavaScript, Images)

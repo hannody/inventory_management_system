@@ -1,0 +1,30 @@
+==============================================================================
+Notes:
+==============================================================================
+1- .env file should kept "secret" and should not be committed to source control. But for simplicity’s sake, it is has
+been added to the repository.
+------------------------------------------------------------------------------*/
+
+
+
+==============================================================================
+Superuser Login
+==============================================================================
+* Please, login to the Superuser account by appending the following to the main URL: secret_admin_007/
+I normally use SHA hashing for admin url generation, but for simplicity’s sake, I have used a simple string.
+
+* To login as a superuser, please use the following credentials:
+username:mohanad
+password:CoolPass
+------------------------------------------------------------------------------*/
+
+
+==============================================================================
+Query Filtering
+==============================================================================
+For filtering, please follow the pattern shown below:
+A- Filtering by inventory item name==> http://127.0.0.1:8000/api/inventory/?name=Item1
+B- Filtering by inventory item based on its availability==> http://127.0.0.1:8000/api/inventory/?availability=true
+
+query data are case-sensitive.
+------------------------------------------------------------------------------*/
