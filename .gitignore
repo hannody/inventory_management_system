@@ -229,5 +229,5 @@ modules.xml
 # Editor-based HTTP Client requests
 /httpRequests/
 mydatabase
-*.sqlite3
+
 /staticfiles/
