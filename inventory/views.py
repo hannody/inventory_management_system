@@ -27,15 +27,18 @@ class ItemListRender(generics.ListAPIView):
         return Response({'items': queryset})
 
 
+# class ItemDetail(generics.RetrieveAPIView):
+#     """
+#     Provides a get method handler to retrieve a single item.
+#     """
+#     queryset = Item.objects.all()
+#     #serializer_class = ItemSerializer
+#     renderer_classes = (TemplateHTMLRenderer,)
+#
+#     def get(self, request, *args, **kwargs):
+#         self.object = self.get_object()
+#         return Response({'item': self.object}, template_name='item_detail.html')
 
 class ItemDetail(generics.RetrieveAPIView):
-    """
-    Provides a get method handler to retrieve a single item.
-    """
     queryset = Item.objects.all()
-    #serializer_class = ItemSerializer
-    renderer_classes = (TemplateHTMLRenderer,)
-
-    def get(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        return Response({'item': self.object}, template_name='item_detail.html')
+    serializer_class = ItemSerializer

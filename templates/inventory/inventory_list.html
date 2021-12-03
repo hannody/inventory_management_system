@@ -1,9 +1,12 @@
-<html><body>
+<html>
+<body>
 <h1>Inventory</h1>
 <ul>
     {% for item in items %}
-    <li>{{ item.name }}</li>
-    <li>{{ item.supplier }}</li>
+        <li>{{ item.name }}</li>
+        <li>{{ item.supplier }}</li>
+        <br/>
     {% endfor %}
 </ul>
-</body></html>
+</body>
+</html>
