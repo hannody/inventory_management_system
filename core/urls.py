@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from decouple import config
+from django.conf import settings # new
+from django.conf.urls.static import static
 
 admin_url = config('ADMIN_URL')
 urlpatterns = [
     path(admin_url, admin.site.urls),
     path('', include('inventory.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

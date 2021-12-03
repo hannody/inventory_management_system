@@ -75,3 +75,20 @@ class ItemsViewTest(TestCase):
         response = self.client.get(path=url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+
+    def test_detail_api_view_render(self):
+        """
+        Test the detail api view i.e. 'inventory/<uuid:pk>/'
+        """
+
+        url = '/{}html/{}/'.format(self.detail_endpoint, self.item.id)
+
+        # Unauthenticated user action, expected outcome ==> 403_FORBIDDEN
+        response = self.client.get(path=url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+        # Authenticated user action, expected outcome ==> 200_OK
+        self.client.login(username="username", email='normal@user.com', password='foo')
+        response = self.client.get(path=url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+

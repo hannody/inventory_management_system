@@ -48,7 +48,7 @@ class Item(models.Model):
     note = models.TextField(blank=True, null=True)
     stock = models.PositiveIntegerField(default=0, blank=False, null=False)
     availability = models.BooleanField(default=False, blank=False, null=False)
-    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    image = models.ImageField(upload_to='media/', null=True, blank=True)
     supplier = models.ForeignKey(to=Supplier, on_delete=models.CASCADE)
 
     class Meta:

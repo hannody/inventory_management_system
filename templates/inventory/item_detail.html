@@ -1,0 +1,17 @@
+<html>
+<body>
+<h1>Item Details</h1>
+<ul>
+    <li>Name: {{ item.name }}</li>
+
+    {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+    {% endif %}
+    <li>Supplier: {{ item.supplier }}</li>
+    <li>Description: {{ item.description }}</li>
+    <li>Note: {{ item.note }}</li>
+    <li>Stock: {{ item.stock }}</li>
+    <li>Availability: {{ item.availability }}</li>
+</ul>
+</body>
+</html>
